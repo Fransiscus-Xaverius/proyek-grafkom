@@ -1,0 +1,11 @@
+Model Information:
+* title:	Sonic Colors Space
+* source:	https://sketchfab.com/3d-models/sonic-colors-space-086c949f1f0c44278bd95c68b3de0e70
+* author:	megajakerake (https://sketchfab.com/jacobq1004)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Sonic Colors Space" (https://sketchfab.com/3d-models/sonic-colors-space-086c949f1f0c44278bd95c68b3de0e70) by megajakerake (https://sketchfab.com/jacobq1004) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
