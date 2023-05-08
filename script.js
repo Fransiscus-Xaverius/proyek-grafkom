@@ -9,6 +9,7 @@ var renderer = new THREE.WebGLRenderer({antialias: true});
 const vertex = new THREE.Vector3();
 const color = new THREE.Color();
 renderer.shadowMap.enabled = true;
+renderer.setSize(innerWidth, innerHeight)
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 scene.background = new THREE.Color(0x49a2f5);
 renderer.setSize(innerWidth, innerHeight);
@@ -62,18 +63,6 @@ const ground = new THREE.Mesh(
 );
 ground.rotateX( - Math.PI / 2 );
 scene.add(ground)
-
-// const groundLoader = new THREE.TextureLoader();
-// const groundTexture = groundLoader.load('rumput.jpg');
-
-// const groundMaterial = new THREE.MeshPhongMaterial();
-// groundMaterial.map = groundTexture;
-// const ground = new THREE.Mesh(
-//     new THREE.PlaneGeometry(500, 500, 10, 10),
-//     groundMaterial
-// );
-// ground.rotateX( - Math.PI / 2 );
-// scene.add(ground)
 
 const controls = new PointerLockControls(cam, renderer.domElement);
 let clock = new THREE.Clock();
