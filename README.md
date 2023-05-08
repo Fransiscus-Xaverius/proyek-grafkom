@@ -1,6 +1,17 @@
 # proyek-grafkom
 A WebGL project for my computer graphics lecture. Mostly using ThreeJS to animate and draw models.
 
+# Preview
+This is an implementation of the use of ThreeJS to animate, load, draw and run 3D Scenes/Models in a web browser
+
+![image](https://user-images.githubusercontent.com/58040241/236886894-35edfc2d-442b-47d8-9c3e-bec9f20fd4f3.png)
+
+# First Time Setup
+To run this project, these must be installed/available to use in your computer:
+1. Visual Studio Code (A text editor with the necessary extensions).
+2. An Internet Connection (This is necessary for the script as the index.html file imports three.js from a CDM link).
+3. Live Server Extension (This is a Visual Studio Code extension that removes the need for you to install your own build tool such as parcel or anything similar)
+
 # Acknowledgement
 We appreciate the open source of the following models 
 
