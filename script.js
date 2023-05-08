@@ -16,7 +16,7 @@ scene.background = temploader.load('langit/textures/z_kt1_stardust01__Opacity__F
 // scene.background = new THREE.Color(0x49a2f5);
 renderer.setSize(innerWidth, innerHeight);
 cam.position.z = 5;
-cam.position.y = 10;
+cam.position.y = 10;7
 document.body.appendChild(renderer.domElement);
 var directionalLight = new THREE.DirectionalLight(0xFFFFFF, 1.0);
 directionalLight.position.set(100, 100, 100);
@@ -107,8 +107,24 @@ function processKeyboard(delta) {
     }
 }
 
+<<<<<<< Updated upstream
 function drawScene() {
+=======
+let timer = 0;
+
+function drawScene(){
+>>>>>>> Stashed changes
     renderer.render(scene, cam);
+    if(hovercraft!=undefined){
+        if(timer%100    ==0){
+            hovercraft.rotation.x+=0.05;
+        }   
+        else if(timer%50==0){
+            hovercraft.rotation.x-=0.05;
+            hovercraft.position.z+=0.05;
+        }
+    }
+    timer++;
     let delta = clock.getDelta();
     processKeyboard(delta);
     controls.lock();
