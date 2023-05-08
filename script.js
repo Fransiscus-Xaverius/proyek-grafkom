@@ -116,12 +116,12 @@ loader.load(
         building_felix = gltf.scene;
         building_felix.receiveShadow = true;
         building_felix.castShadow = true;
-        building_felix.position.x = -50;
+        building_felix.position.x = -25;
         building_felix.position.y = 0;
-        building_felix.position.z = 100;
-        building_felix.scale.x = 0.1;
-        building_felix.scale.y = 0.1;
-        building_felix.scale.z = 0.1;
+        building_felix.position.z = 40;
+        building_felix.scale.x = .2;
+        building_felix.scale.y = .2;
+        building_felix.scale.z = .2;
         console.log(building_felix)
         scene.add(building_felix)
     }
@@ -163,16 +163,16 @@ loader.load(
         scene.add(rumah_kotak)
     }
 )
-let gedung_bulet;
+let gedung_bulet; 
 loader.load(
     'models/gedung_bulet/scene.gltf',
     function (gltf) {
         gedung_bulet = gltf.scene;
         gedung_bulet.receiveShadow = true;
         gedung_bulet.castShadow = true;
-        gedung_bulet.position.x = 20;
-        gedung_bulet.position.y = -5;
-        gedung_bulet.position.z = 100;
+        gedung_bulet.position.x = 23;
+        gedung_bulet.position.y = -4;
+        gedung_bulet.position.z = 65;
         gedung_bulet.scale.x = 1;
         gedung_bulet.scale.y = 1;
         gedung_bulet.scale.z = 1;
