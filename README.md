@@ -1,5 +1,10 @@
 # proyek-grafkom
 A WebGL project for my computer graphics lecture. Mostly using ThreeJS to animate and draw models.
+This is a collaborative group project made by me and my group partner [@fwijaya918](https://github.com/fwijaya918) for our
+Computer Graphics class [@iSTTS](https://www.istts.ac.id/).
+
+Fransiscus Xaverius - 221116955
+Felix Wijaya        - 221116954
 
 # Preview
 This is an implementation of the use of ThreeJS to animate, load, draw and run 3D Scenes/Models in a web browser
