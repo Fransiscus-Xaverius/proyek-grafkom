@@ -53,12 +53,14 @@ let hovercraft;
 );
 
 const groundLoader = new THREE.TextureLoader();
-const groundTexture = groundLoader.load('floor.jpg');
-
+let groundTexture = groundLoader.load('floor.jpg');
+groundTexture.wrapS = THREE.RepeatWrapping;
+groundTexture.wrapT = THREE.RepeatWrapping;
+groundTexture.repeat.set(40,40);
 const groundMaterial = new THREE.MeshPhongMaterial();
 groundMaterial.map = groundTexture;
 const ground = new THREE.Mesh(
-    new THREE.PlaneGeometry(100, 100, 10, 10),
+    new THREE.PlaneGeometry(50, 50, 10, 10),
     groundMaterial
 );
 ground.rotateX( - Math.PI / 2 );
