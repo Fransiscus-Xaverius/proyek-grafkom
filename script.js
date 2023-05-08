@@ -31,25 +31,25 @@ scene.add(directionalLight);
 directionalLight = new THREE.AmbientLight(0xffffff, 0.5);
 scene.add(directionalLight);
 
-// const loader = new GLTFLoader();
-// let tree;
-// loader.load(
-//   // resource URL
-//   'stylized_tree/scene.gltf',
-//   function (gltf) {
-//     tree = gltf.scene;
-//     tree.receiveShadow = true;
-//     tree.castShadow=true;
-//     tree.position.x = 5;
-//     tree.position.y = 0;
-//     tree.position.z = 5;
-//     tree.scale.x = 100;
-//     tree.scale.y = 100;
-//     tree.scale.z = 100;
-//     console.log(tree)
-//     scene.add(tree)
-//   }
-// );
+const loader = new GLTFLoader();
+let hovercraft;
+ loader.load(
+   // resource URL
+   'hovercraft/scene.gltf',
+   function (gltf) {
+    hovercraft = gltf.scene;
+    hovercraft.receiveShadow = true;
+    hovercraft.castShadow=true;
+    hovercraft.position.x = 20;
+    hovercraft.position.y = 0;
+    hovercraft.position.z = 5;
+    hovercraft.scale.x = 1;
+    hovercraft.scale.y = 1;
+    hovercraft.scale.z = 1;
+    console.log(hovercraft)
+    scene.add(hovercraft)
+  }
+);
 
 // const groundLoader = new THREE.TextureLoader();
 // const groundTexture = groundLoader.load('rumput.jpg');
