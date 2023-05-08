@@ -51,6 +51,18 @@ let hovercraft;
   }
 );
 
+const groundLoader = new THREE.TextureLoader();
+const groundTexture = groundLoader.load('floor.jpg');
+
+const groundMaterial = new THREE.MeshPhongMaterial();
+groundMaterial.map = groundTexture;
+const ground = new THREE.Mesh(
+    new THREE.PlaneGeometry(100, 100, 10, 10),
+    groundMaterial
+);
+ground.rotateX( - Math.PI / 2 );
+scene.add(ground)
+
 // const groundLoader = new THREE.TextureLoader();
 // const groundTexture = groundLoader.load('rumput.jpg');
 
