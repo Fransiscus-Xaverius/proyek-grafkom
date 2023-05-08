@@ -61,7 +61,7 @@ const groundTexture = groundLoader.load('download.jpg');
 const groundMaterial = new THREE.MeshPhongMaterial();
 groundMaterial.map = groundTexture;
 const ground = new THREE.Mesh(
-    new THREE.PlaneGeometry(100, 100, 10, 10),
+    new THREE.PlaneGeometry(50, 50, 10, 10),
     groundMaterial
 );
 ground.rotateX(- Math.PI / 2);
