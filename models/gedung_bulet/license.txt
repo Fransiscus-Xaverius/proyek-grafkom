@@ -1,0 +1,11 @@
+Model Information:
+* title:	Low Poly Sci-Fi Lab
+* source:	https://sketchfab.com/3d-models/low-poly-sci-fi-lab-e84fd3405b34421095c70b0e09cc3111
+* author:	berkay.tari (https://sketchfab.com/berkay.tari)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Low Poly Sci-Fi Lab" (https://sketchfab.com/3d-models/low-poly-sci-fi-lab-e84fd3405b34421095c70b0e09cc3111) by berkay.tari (https://sketchfab.com/berkay.tari) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Apartment Houses - Level Three Pack
+* source:	https://sketchfab.com/3d-models/apartment-houses-level-three-pack-348790d23d1f4ba5af9c6a489460f288
+* author:	MRowa (https://sketchfab.com/MRowa)
+
+Model License:
+* license type:	CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
+* requirements:	Author must be credited. Modified versions must have the same license. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Apartment Houses - Level Three Pack" (https://sketchfab.com/3d-models/apartment-houses-level-three-pack-348790d23d1f4ba5af9c6a489460f288) by MRowa (https://sketchfab.com/MRowa) licensed under CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
