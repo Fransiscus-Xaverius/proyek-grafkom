@@ -95,6 +95,12 @@ function processKeyboard(delta){
     if (keyboard["d"]) {
         controls.moveRight(actualSpeed);
     }
+    if(keyboard["Control"]){
+        cam.translateY(-0.05);
+    }
+    if(keyboard[" "]){
+        cam.translateY(0.05);
+    }
 }
 
 function drawScene(){
