@@ -15,10 +15,11 @@ const temploader = new THREE.TextureLoader();
 scene.background = temploader.load('langit/textures/z_kt1_stardust01__Opacity__F_baseColor.png');
 // scene.background = new THREE.Color(0x49a2f5);
 renderer.setSize(innerWidth, innerHeight);
-cam.position.z = 5;
-cam.position.y = 10;7
+cam.position.x = 0;
+cam.position.z = 90;
+cam.position.y = 5;
 document.body.appendChild(renderer.domElement);
-var directionalLight = new THREE.DirectionalLight(0xFFFFFF, 1.0);
+var directionalLight = new THREE.DirectionalLight(0xFFFFFF, 5.0);
 directionalLight.position.set(100, 100, 100);
 directionalLight.castShadow = true;
 directionalLight.shadow.camera.near = 1;
@@ -35,37 +36,60 @@ directionalLight = new THREE.AmbientLight(0xffffff, 0.5);
 scene.add(directionalLight);
 
 const loader = new GLTFLoader();
-let hovercraft;
+
+let base;
 loader.load(
-    // resource URL
-    'hovercraft/scene.gltf',
+    'models/rts_military_building_1/scene.gltf',
     function (gltf) {
-        hovercraft = gltf.scene;
-        hovercraft.receiveShadow = true;
-        hovercraft.castShadow = true;
-        hovercraft.position.x = 20;
-        hovercraft.position.y = 0;
-        hovercraft.position.z = 5;
-        hovercraft.scale.x = 1;
-        hovercraft.scale.y = 1;
-        hovercraft.scale.z = 1;
-        console.log(hovercraft)
-        scene.add(hovercraft)
+        base = gltf.scene;
+        base.receiveShadow = true;
+        base.castShadow = true;
+        base.position.x = 0;
+        base.position.y = 0;
+        base.position.z = 60;
+        base.scale.x = 10;
+        base.scale.y = 10;
+        base.scale.z = 10;
+        console.log(base)
+        scene.add(base)
     }
 );
 
-const groundLoader = new THREE.TextureLoader();
-const groundTexture = groundLoader.load('download.jpg');
+let land;
+loader.load(
+    'models/mars_land/scene.gltf',
+    function (gltf) {
+        land = gltf.scene;
+        land.receiveShadow = true;
+        land.castShadow = true;
+        land.position.x = 0;
+        land.position.y = 3.5;
+        land.position.z = 7;
+        land.scale.x = 100;
+        land.scale.y = 100;
+        land.scale.z = 100;
+        console.log(land)
+        scene.add(land)
+    }
+)
 
-
-const groundMaterial = new THREE.MeshPhongMaterial();
-groundMaterial.map = groundTexture;
-const ground = new THREE.Mesh(
-    new THREE.PlaneGeometry(50, 50, 10, 10),
-    groundMaterial
-);
-ground.rotateX(- Math.PI / 2);
-scene.add(ground)
+let starship;
+loader.load(
+    'models/starwars_model/scene.gltf',
+    function (gltf) {
+        starship = gltf.scene;
+        starship.receiveShadow = true;
+        starship.castShadow = true;
+        starship.position.x = 0;
+        starship.position.y = 10;
+        starship.position.z = 50;
+        starship.scale.x = 6;
+        starship.scale.y = 6;
+        starship.scale.z = 6;
+        console.log(starship)
+        scene.add(starship)
+    }
+)
 
 const controls = new PointerLockControls(cam, renderer.domElement);
 let clock = new THREE.Clock();
@@ -85,7 +109,7 @@ addEventListener('keyup', (e) => {
 });
 
 function processKeyboard(delta) {
-    let speed = 300;
+    let speed = 100;
     let actualSpeed = speed * delta;
     if (keyboard["w"]) {
         controls.moveForward(actualSpeed);
@@ -107,23 +131,19 @@ function processKeyboard(delta) {
     }
 }
 
-<<<<<<< Updated upstream
-function drawScene() {
-=======
 let timer = 0;
 
-function drawScene(){
->>>>>>> Stashed changes
+function drawScene() {
     renderer.render(scene, cam);
-    if(hovercraft!=undefined){
-        if(timer%100    ==0){
-            hovercraft.rotation.x+=0.05;
-        }   
-        else if(timer%50==0){
-            hovercraft.rotation.x-=0.05;
-            hovercraft.position.z+=0.05;
-        }
-    }
+    // if(hovercraft!=undefined){
+    //     if(timer%100    ==0){
+    //         hovercraft.rotation.x+=0.05;
+    //     }   
+    //     else if(timer%50==0){
+    //         hovercraft.rotation.x-=0.05;
+    //         hovercraft.position.z+=0.05;
+    //     }
+    // }
     timer++;
     let delta = clock.getDelta();
     processKeyboard(delta);

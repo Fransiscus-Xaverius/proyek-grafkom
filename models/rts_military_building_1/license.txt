@@ -1,0 +1,11 @@
+Model Information:
+* title:	RTS Military Building 1
+* source:	https://sketchfab.com/3d-models/rts-military-building-1-4925be311dbb4d66b636ff40b235b047
+* author:	Sabri Ayeş (https://sketchfab.com/sabriayes)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "RTS Military Building 1" (https://sketchfab.com/3d-models/rts-military-building-1-4925be311dbb4d66b636ff40b235b047) by Sabri Ayeş (https://sketchfab.com/sabriayes) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
