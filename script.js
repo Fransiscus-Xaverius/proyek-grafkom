@@ -15,9 +15,9 @@ const temploader = new THREE.TextureLoader();
 scene.background = temploader.load('langit/textures/z_kt1_stardust01__Opacity__F_baseColor.png');
 // scene.background = new THREE.Color(0x49a2f5);
 renderer.setSize(innerWidth, innerHeight);
-cam.position.x = 0;
-cam.position.z = 90;
-cam.position.y = 5;
+cam.position.x = 60;
+cam.position.z = 375;
+cam.position.y = 205;
 document.body.appendChild(renderer.domElement);
 var directionalLight = new THREE.DirectionalLight(0xFFFFFF, 5.0);
 directionalLight.position.set(100, 100, 100);
@@ -44,12 +44,13 @@ loader.load(
         base = gltf.scene;
         base.receiveShadow = true;
         base.castShadow = true;
-        base.position.x = 0;
-        base.position.y = 0;
-        base.position.z = 65;
-        base.scale.x = 10;
-        base.scale.y = 10;
-        base.scale.z = 10;
+        base.position.x = -200;
+        base.position.y = 35;
+        base.position.z = 185;
+        base.scale.x = 40;
+        base.scale.y = 50;
+        base.scale.z = 30;
+        base.rotation.y = 1;
         console.log(base)
         scene.add(base)
     }
@@ -57,7 +58,7 @@ loader.load(
 
 let land;
 loader.load(
-    'models/mars_land/scene.gltf',
+    'models/moon_surface/scene.gltf',
     function (gltf) {
         land = gltf.scene;
         land.receiveShadow = true;
@@ -65,9 +66,9 @@ loader.load(
         land.position.x = 0;
         land.position.y = 3.5;
         land.position.z = 7;
-        land.scale.x = 100;
-        land.scale.y = 100;
-        land.scale.z = 100;
+        land.scale.x = .5;
+        land.scale.y = .5;
+        land.scale.z = .5;
         console.log(land)
         scene.add(land)
     }
@@ -86,7 +87,8 @@ loader.load(
         starship.scale.x = 6;
         starship.scale.y = 6;
         starship.scale.z = 6;
-        console.log(starship)
+        let axesHelper1 = new THREE.AxesHelper(50);
+        starship.add(axesHelper1);
         scene.add(starship)
     }
 )
@@ -98,12 +100,12 @@ loader.load(
         gedung_2 = gltf.scene;
         gedung_2.receiveShadow = true;
         gedung_2.castShadow = true;
-        gedung_2.position.x = -80;
-        gedung_2.position.y = -3;
-        gedung_2.position.z = 40;
-        gedung_2.scale.x = 0.01;
-        gedung_2.scale.y = 0.01;
-        gedung_2.scale.z = 0.01;
+        gedung_2.position.x = 10;
+        gedung_2.position.y = 0;
+        gedung_2.position.z = 30;
+        gedung_2.scale.x = .06;
+        gedung_2.scale.y = .06;
+        gedung_2.scale.z = .06;
         console.log(gedung_2)
         scene.add(gedung_2)
     }
@@ -116,16 +118,19 @@ loader.load(
         building_felix = gltf.scene;
         building_felix.receiveShadow = true;
         building_felix.castShadow = true;
-        building_felix.position.x = -25;
-        building_felix.position.y = 0;
-        building_felix.position.z = 40;
-        building_felix.scale.x = .2;
-        building_felix.scale.y = .2;
-        building_felix.scale.z = .2;
+        building_felix.position.x = 260;
+        building_felix.position.y = 50;
+        building_felix.position.z = -80;
+        building_felix.scale.x = 1.5;
+        building_felix.scale.y = 1.5;
+        building_felix.scale.z = 1.5;
         console.log(building_felix)
         scene.add(building_felix)
     }
 )
+
+const porosGeo = new THREE.SphereGeometry(16,30,30);
+
 let pesawat;
 loader.load(
     'models/pesawat/scene.gltf',
@@ -139,8 +144,6 @@ loader.load(
         pesawat.scale.x = 1;
         pesawat.scale.y = 1;
         pesawat.scale.z = 1;
-        pesawat.rotation.y += 5;
-        pesawat.rotation.z += 1;
         console.log(pesawat)
         scene.add(pesawat)
     }
@@ -181,14 +184,36 @@ loader.load(
     }
 )
 
+let death_star;
+loader.load(
+    'models/death_star/scene.gltf',
+    function(gltf){
+        death_star = gltf.scene;
+        death_star.receiveShadow = true;
+        death_star.castShadow = true;
+        death_star.position.x = -1000;
+        death_star.position.y = 1200;
+        death_star.position.z = -600;
+        death_star.scale.x = 1;
+        death_star.scale.y = 1;
+        death_star.scale.z = 1;
+        death_star.rotation.x +=1.15;
+        death_star.rotation.y-=1;
+        scene.add(death_star);
+    }
+)
+
 const controls = new PointerLockControls(cam, renderer.domElement);
 let clock = new THREE.Clock();
 const boxGeometry = new THREE.BoxGeometry();
 const boxMaterial = new THREE.MeshBasicMaterial({ color: 0xFF0000 });
 
-const box = new THREE.Mesh(boxGeometry, boxMaterial);
+// const box = new THREE.Mesh(boxGeometry, boxMaterial);
 
-scene.add(box);
+// const axesHelper = new THREE.AxesHelper(50);
+// scene.add(axesHelper);
+
+// scene.add(box);
 
 let keyboard = [];
 addEventListener('keydown', (e) => {
@@ -202,27 +227,28 @@ function processKeyboard(delta) {
     let speed = 100;
     let actualSpeed = speed * delta;
     if (keyboard["w"]) {
-        if(cam.position.z>-250 && cam.position.z<250  && cam.position.x > -200 && cam.position.x < 200){
-            controls.moveForward(actualSpeed);
-        }
+        // if(cam.position.z>-250 && cam.position.z<300  && cam.position.x > -200 && cam.position.x < 200){
+        //     controls.moveForward(actualSpeed);
+        // }
+        controls.moveForward(actualSpeed);
     }
     if (keyboard["a"]) {
-        if (cam.position.x > -200) {
-            controls.moveRight(-actualSpeed);
-        }
-
+        // if (cam.position.x > -200) {
+        //     controls.moveRight(-actualSpeed);
+        // }
+        controls.moveRight(-actualSpeed);
     }
     if (keyboard["s"]) {
-        if(cam.position.z>-250 && cam.position.z<250 && cam.position.x > -200 && cam.position.x < 200){
-            controls.moveForward(-actualSpeed);
-        }
-        
+        // if(cam.position.z>-250 && cam.position.z<250 && cam.position.x > -200 && cam.position.x < 200){
+        //     controls.moveForward(-actualSpeed);
+        // }
+        controls.moveForward(-actualSpeed);
     }
     if (keyboard["d"]) {
-        if (cam.position.x < 200) {
-            controls.moveRight(actualSpeed);
-        }
-
+        // if (cam.position.x < 200) {
+        //     controls.moveRight(actualSpeed);
+        // }
+        controls.moveRight(actualSpeed);
     }
     if (keyboard["Control"]) {
         // console.log(cam.position.y)
@@ -231,30 +257,60 @@ function processKeyboard(delta) {
         }
     }
     if (keyboard[" "]) {
-        if (cam.position.y < 120) {
-            cam.translateY(actualSpeed);
-        }
-
+        // if (cam.position.y < 120) {
+        //     cam.translateY(actualSpeed);
+        // }
+        cam.translateY(actualSpeed);
     }
+
+    if(keyboard["-"]){
+        alert(cam.position.x+","+cam.position.x+","+cam.position.z);
+    }
+}
+
+function animate(){
+    
 }
 
 let timer = 0;
 
+function resetStarship(timer){
+    starship.position.x = 0;
+    starship.position.z = 0;
+    starship.position.y = 0;
+    timer = 0;
+}
+
+function animateStarship(t){
+    if(t>5&&t<10){
+        console.log(t);
+        starship.rotation.x+=100;
+    }
+}
+
 function drawScene() {
     renderer.render(scene, cam);
-    // if(hovercraft!=undefined){
-    //     if(timer%100    ==0){
-    //         hovercraft.rotation.x+=0.05;
-    //     }   
-    //     else if(timer%50==0){
-    //         hovercraft.rotation.x-=0.05;
-    //         hovercraft.position.z+=0.05;
-    //     }
-    // }
-    timer++;
+    animate();
+    if(pesawat!=undefined){
+        
+    }
     let delta = clock.getDelta();
     processKeyboard(delta);
     controls.lock();
+    timer++;
     requestAnimationFrame(drawScene);
+    if(death_star.position.x>-400){
+        death_star.position.x = -1000;
+        death_star.position.y = 1200;
+        death_star.position.z = -600;
+        resetStarship(timer);
+    }
+    else{
+        starship.translateZ(7);
+        animateStarship(timer);
+        death_star.translateX(10);
+    }
+    timer++;
+    console.log(timer);
 }
 drawScene();

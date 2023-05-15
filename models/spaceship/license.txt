@@ -1,0 +1,11 @@
+Model Information:
+* title:	Star Sparrow Modular Spaceship
+* source:	https://sketchfab.com/3d-models/star-sparrow-modular-spaceship-28806b168f8043bbb5c1c922f98452c9
+* author:	Ebal Studios (https://sketchfab.com/EbalStudios)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Star Sparrow Modular Spaceship" (https://sketchfab.com/3d-models/star-sparrow-modular-spaceship-28806b168f8043bbb5c1c922f98452c9) by Ebal Studios (https://sketchfab.com/EbalStudios) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
