@@ -47,9 +47,9 @@ loader.load(
         base.position.x = -200;
         base.position.y = 35;
         base.position.z = 185;
-        base.scale.x = 40;
-        base.scale.y = 50;
-        base.scale.z = 30;
+        base.scale.x = 100;
+        base.scale.y = 125;
+        base.scale.z = 75;
         base.rotation.y = 1;
         console.log(base)
         scene.add(base)
@@ -240,7 +240,29 @@ function processKeyboard(delta) {
                 controls.moveForward(actualSpeed);
 
             }
-        } else {
+        }//gedung tinggi
+        else if (cam.position.x > 239 && cam.position.x < 430) {
+            if (cam.position.y < 450) {
+                if (cam.position.z > -13 || cam.position.z < -155) {
+                    controls.moveForward(actualSpeed);
+                }
+            } else {
+                controls.moveForward(actualSpeed);
+
+            }
+        } 
+        //gedung bunker
+        else if (cam.position.x > -300 && cam.position.x < -105) {
+            if (cam.position.y < 100) {
+                if (cam.position.z > 270 || cam.position.z < 120) {
+                    controls.moveForward(actualSpeed);
+                }
+            } else {
+                controls.moveForward(actualSpeed);
+
+            }
+        }
+        else {
             controls.moveForward(actualSpeed);
         }
 
@@ -262,7 +284,29 @@ function processKeyboard(delta) {
                 controls.moveRight(-actualSpeed);
 
             }
-        } else {
+        }
+        else if (cam.position.x > 239 && cam.position.x < 430) {
+            if (cam.position.y < 450) {
+                if (cam.position.z > -13 || cam.position.z < -155) {
+                    controls.moveRight(-actualSpeed);
+                }
+            } else {
+                controls.moveRight(-actualSpeed);
+
+            }
+        } 
+        //gedung bunker
+        else if (cam.position.x > -300 && cam.position.x < -105) {
+            if (cam.position.y < 100) {
+                if (cam.position.z > 270 || cam.position.z < 120) {
+                    controls.moveRight(-actualSpeed);
+                }
+            } else {
+                controls.moveRight(-actualSpeed);
+
+            }
+        }
+        else {
             controls.moveRight(-actualSpeed);
         }
 
@@ -284,7 +328,29 @@ function processKeyboard(delta) {
                 controls.moveForward(-actualSpeed);
 
             }
-        } else {
+        }
+        else if (cam.position.x > 239 && cam.position.x < 430) {
+            if (cam.position.y < 450) {
+                if (cam.position.z > -13 || cam.position.z < -155) {
+                    controls.moveForward(-actualSpeed);
+                }
+            } else {
+                controls.moveForward(-actualSpeed);
+
+            }
+        } 
+        //gedung bunker
+        else if (cam.position.x > -300 && cam.position.x < -105) {
+            if (cam.position.y < 100) {
+                if (cam.position.z > 270 || cam.position.z < 120) {
+                    controls.moveForward(-actualSpeed);
+                }
+            } else {
+                controls.moveForward(-actualSpeed);
+
+            }
+        }
+        else {
             controls.moveForward(-actualSpeed);
         }
     }
@@ -305,7 +371,29 @@ function processKeyboard(delta) {
                 controls.moveRight(actualSpeed);
 
             }
-        } else {
+        }
+        else if (cam.position.x > 239 && cam.position.x < 430) {
+            if (cam.position.y < 450) {
+                if (cam.position.z > -13 || cam.position.z < -155) {
+                    controls.moveRight(actualSpeed);
+                }
+            } else {
+                controls.moveRight(actualSpeed);
+
+            }
+        } 
+        //gedung bunker
+        else if (cam.position.x > -300 && cam.position.x < -105) {
+            if (cam.position.y < 100) {
+                if (cam.position.z > 270 || cam.position.z < 120) {
+                    controls.moveRight(actualSpeed);
+                }
+            } else {
+                controls.moveRight(actualSpeed);
+
+            }
+        }
+        else {
             controls.moveRight(actualSpeed);
         }
     }
@@ -324,7 +412,29 @@ function processKeyboard(delta) {
                 cam.translateY(-actualSpeed);
 
             }
-        } else {
+        }
+        else if (cam.position.x > 239 && cam.position.x < 430) {
+            if (cam.position.y < 450) {
+                if (cam.position.z > -13 || cam.position.z < -155) {
+                    cam.translateY(-actualSpeed);
+                }
+            } else {
+                cam.translateY(-actualSpeed);
+
+            }
+        } 
+        //gedung bunker
+        else if (cam.position.x > -300 && cam.position.x < -105) {
+            if (cam.position.y < 100) {
+                if (cam.position.z > 270 || cam.position.z < 120) {
+                    cam.translateY(-actualSpeed);
+                }
+            } else {
+                cam.translateY(-actualSpeed);
+
+            }
+        }
+        else {
             cam.translateY(-actualSpeed);
         }
     }
