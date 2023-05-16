@@ -92,7 +92,7 @@ loader.load(
         scene.add(starship)
     }
 )
-
+//gedung yang 4 biji putih
 let gedung_2;
 loader.load(
     'models/gedung_2/scene.gltf',
@@ -118,7 +118,7 @@ loader.load(
         building_felix = gltf.scene;
         building_felix.receiveShadow = true;
         building_felix.castShadow = true;
-        building_felix.position.x = 260;
+        building_felix.position.x = 350;
         building_felix.position.y = 50;
         building_felix.position.z = -80;
         building_felix.scale.x = 1.5;
@@ -129,7 +129,7 @@ loader.load(
     }
 )
 
-const porosGeo = new THREE.SphereGeometry(16,30,30);
+const porosGeo = new THREE.SphereGeometry(16, 30, 30);
 
 let pesawat;
 loader.load(
@@ -166,7 +166,7 @@ loader.load(
         scene.add(rumah_kotak)
     }
 )
-let gedung_bulet; 
+let gedung_bulet;
 loader.load(
     'models/gedung_bulet/scene.gltf',
     function (gltf) {
@@ -187,7 +187,7 @@ loader.load(
 let death_star;
 loader.load(
     'models/death_star/scene.gltf',
-    function(gltf){
+    function (gltf) {
         death_star = gltf.scene;
         death_star.receiveShadow = true;
         death_star.castShadow = true;
@@ -197,8 +197,8 @@ loader.load(
         death_star.scale.x = 1;
         death_star.scale.y = 1;
         death_star.scale.z = 1;
-        death_star.rotation.x +=1.15;
-        death_star.rotation.y-=1;
+        death_star.rotation.x += 1.15;
+        death_star.rotation.y -= 1;
         scene.add(death_star);
     }
 )
@@ -227,32 +227,104 @@ function processKeyboard(delta) {
     let speed = 100;
     let actualSpeed = speed * delta;
     if (keyboard["w"]) {
-        // if(cam.position.z>-250 && cam.position.z<300  && cam.position.x > -200 && cam.position.x < 200){
-        //     controls.moveForward(actualSpeed);
-        // }
-        controls.moveForward(actualSpeed);
+        console.log("ini posisi y" + cam.position.y)
+        console.log("ini posisi z" + cam.position.z)
+        console.log("ini posisi x" + cam.position.x)
+        //gedung_2 4biji putih 
+        if (cam.position.x > -70 && cam.position.x < 110) {
+            if (cam.position.y < 220) {
+                if (cam.position.z > 160 || cam.position.z < -106) {
+                    controls.moveForward(actualSpeed);
+                }
+            } else {
+                controls.moveForward(actualSpeed);
+
+            }
+        } else {
+            controls.moveForward(actualSpeed);
+        }
+
     }
     if (keyboard["a"]) {
         // if (cam.position.x > -200) {
         //     controls.moveRight(-actualSpeed);
         // }
-        controls.moveRight(-actualSpeed);
+        console.log("ini posisi y" + cam.position.y)
+        console.log("ini posisi z" + cam.position.z)
+        console.log("ini posisi x" + cam.position.x)
+        //gedung_2 4biji putih 
+        if (cam.position.x > -70 && cam.position.x < 110) {
+            if (cam.position.y < 220) {
+                if (cam.position.z > 160 || cam.position.z < -106) {
+                    controls.moveRight(- actualSpeed);
+                }
+            } else {
+                controls.moveRight(-actualSpeed);
+
+            }
+        } else {
+            controls.moveRight(-actualSpeed);
+        }
+
     }
     if (keyboard["s"]) {
-        // if(cam.position.z>-250 && cam.position.z<250 && cam.position.x > -200 && cam.position.x < 200){
-        //     controls.moveForward(-actualSpeed);
+        // if (cam.position.x > -200) {
+        //     controls.moveRight(-actualSpeed);
         // }
-        controls.moveForward(-actualSpeed);
+        console.log("ini posisi y" + cam.position.y)
+        console.log("ini posisi z" + cam.position.z)
+        console.log("ini posisi x" + cam.position.x)
+        //gedung_2 4biji putih 
+        if (cam.position.x > -70 && cam.position.x < 110) {
+            if (cam.position.y < 220) {
+                if (cam.position.z > 160 || cam.position.z < -106) {
+                    controls.moveForward(- actualSpeed);
+                }
+            } else {
+                controls.moveForward(-actualSpeed);
+
+            }
+        } else {
+            controls.moveForward(-actualSpeed);
+        }
     }
     if (keyboard["d"]) {
         // if (cam.position.x < 200) {
         //     controls.moveRight(actualSpeed);
         // }
-        controls.moveRight(actualSpeed);
+        console.log("ini posisi y" + cam.position.y)
+        console.log("ini posisi z" + cam.position.z)
+        console.log("ini posisi x" + cam.position.x)
+        //gedung_2 4biji putih 
+        if (cam.position.x > -70 && cam.position.x < 110) {
+            if (cam.position.y < 220) {
+                if (cam.position.z > 160 || cam.position.z < -106) {
+                    controls.moveRight(actualSpeed);
+                }
+            } else {
+                controls.moveRight(actualSpeed);
+
+            }
+        } else {
+            controls.moveRight(actualSpeed);
+        }
     }
     if (keyboard["Control"]) {
         // console.log(cam.position.y)
-        if (cam.position.y > 0) {
+        console.log("ini posisi y" + cam.position.y)
+        console.log("ini posisi z" + cam.position.z)
+        console.log("ini posisi x" + cam.position.x)
+        //gedung_2 4biji putih 
+        if (cam.position.x > -70 && cam.position.x < 110) {
+            if (cam.position.y < 220) {
+                if (cam.position.z > 160 || cam.position.z < -106) {
+                    cam.translateY(-actualSpeed);
+                }
+            } else {
+                cam.translateY(-actualSpeed);
+
+            }
+        } else {
             cam.translateY(-actualSpeed);
         }
     }
@@ -263,49 +335,49 @@ function processKeyboard(delta) {
         cam.translateY(actualSpeed);
     }
 
-    if(keyboard["-"]){
-        alert(cam.position.x+","+cam.position.x+","+cam.position.z);
+    if (keyboard["-"]) {
+        alert(cam.position.x + "," + cam.position.x + "," + cam.position.z);
     }
 }
 
-function animate(){
-    
+function animate() {
+
 }
 
 let timer = 0;
 
-function resetStarship(timer){
+function resetStarship(timer) {
     starship.position.x = 0;
     starship.position.z = 0;
     starship.position.y = 0;
     timer = 0;
 }
 
-function animateStarship(t){
-    if(t>5&&t<10){
+function animateStarship(t) {
+    if (t > 5 && t < 10) {
         console.log(t);
-        starship.rotation.x+=100;
+        starship.rotation.x += 100;
     }
 }
 
 function drawScene() {
     renderer.render(scene, cam);
     animate();
-    if(pesawat!=undefined){
-        
+    if (pesawat != undefined) {
+
     }
     let delta = clock.getDelta();
     processKeyboard(delta);
     controls.lock();
     timer++;
     requestAnimationFrame(drawScene);
-    if(death_star.position.x>-400){
+    if (death_star.position.x > -400) {
         death_star.position.x = -1000;
         death_star.position.y = 1200;
         death_star.position.z = -600;
         resetStarship(timer);
     }
-    else{
+    else {
         starship.translateZ(7);
         animateStarship(timer);
         death_star.translateX(10);

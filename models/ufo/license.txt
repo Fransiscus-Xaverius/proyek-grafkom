@@ -1,0 +1,11 @@
+Model Information:
+* title:	ufo(spaceship)
+* source:	https://sketchfab.com/3d-models/ufospaceship-77a99a30b7eb42a3b7017dd97e5885b1
+* author:	MAD_DUDE (https://sketchfab.com/MAD_DUDE)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "ufo(spaceship)" (https://sketchfab.com/3d-models/ufospaceship-77a99a30b7eb42a3b7017dd97e5885b1) by MAD_DUDE (https://sketchfab.com/MAD_DUDE) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

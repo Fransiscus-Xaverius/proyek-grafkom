@@ -1,0 +1,11 @@
+Model Information:
+* title:	Sky Fly V07
+* source:	https://sketchfab.com/3d-models/sky-fly-v07-e264b6a38c6e4ab5a07028e9a95ae423
+* author:	Andrey Mikheev (https://sketchfab.com/id17317)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Sky Fly V07" (https://sketchfab.com/3d-models/sky-fly-v07-e264b6a38c6e4ab5a07028e9a95ae423) by Andrey Mikheev (https://sketchfab.com/id17317) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
