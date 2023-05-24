@@ -122,12 +122,12 @@ loader.load(
         building_felix = gltf.scene;
         building_felix.receiveShadow = true;
         building_felix.castShadow = true;
-        building_felix.position.x = 350;
-        building_felix.position.y = 50;
-        building_felix.position.z = -80;
-        building_felix.scale.x = 1.5;
-        building_felix.scale.y = 1.5;
-        building_felix.scale.z = 1.5;
+        building_felix.position.x = 200;
+        building_felix.position.y = 35;
+        building_felix.position.z = 80;
+        building_felix.scale.x = 1;
+        building_felix.scale.y = 1;
+        building_felix.scale.z = 1;
         console.log(building_felix)
         scene.add(building_felix)
     }
@@ -201,9 +201,9 @@ loader.load(
         death_star.position.x = -1000;
         death_star.position.y = 1200;
         death_star.position.z = -600;
-        death_star.scale.x = 1;
-        death_star.scale.y = 1;
-        death_star.scale.z = 1;
+        death_star.scale.x = 2;
+        death_star.scale.y = 2;
+        death_star.scale.z = 2;
         death_star.rotation.x += 1.15;
         death_star.rotation.y -= 1;
         scene.add(death_star);
@@ -229,6 +229,40 @@ addEventListener('keydown', (e) => {
 addEventListener('keyup', (e) => {
     keyboard[e.key] = false;
 });
+
+let futuristic_building; 
+loader.load(
+    'models/futuristic_building/scene.gltf',
+    function(gltf){
+        futuristic_building = gltf.scene;
+        futuristic_building.receiveShadow = true;
+        futuristic_building.castShadow = true;
+        futuristic_building.position.x = 160;
+        futuristic_building.position.y = 0;
+        futuristic_building.position.z = -90;
+        futuristic_building.scale.x = 100;
+        futuristic_building.scale.y = 125;
+        futuristic_building.scale.z = 75;
+        scene.add(futuristic_building);
+    }
+)
+
+let scifi_building; 
+loader.load(
+    'models/scifi_building/scene.gltf',
+    function(gltf){
+        scifi_building = gltf.scene;
+        scifi_building.receiveShadow = true;
+        scifi_building.castShadow = true;
+        scifi_building.position.x = 350;
+        scifi_building.position.y = 0;
+        scifi_building.position.z = 30;
+        scifi_building.scale.x = 3;
+        scifi_building.scale.y = 3;
+        scifi_building.scale.z = 3;
+        scene.add(scifi_building);
+    }
+)
 
 function processKeyboard(delta) {
     let speed = 100;
@@ -488,7 +522,7 @@ function drawScene() {
     controls.lock();
     timer++;
     requestAnimationFrame(drawScene);
-    if (death_star.position.x > -400) {
+    if (death_star.position.x > -600) {
         death_star.position.x = -1000;
         death_star.position.y = 1200;
         death_star.position.z = -600;
@@ -498,7 +532,7 @@ function drawScene() {
     else {
         // starship.translateZ(7);
         animateStarship(timer);
-        death_star.translateX(10);
+        death_star.translateX(1);
         
     }
     if (timer2 == 0) {
