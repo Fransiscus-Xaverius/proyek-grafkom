@@ -9,7 +9,7 @@ Felix Wijaya        - 221116954
 # Preview
 This is an implementation of the use of ThreeJS to animate, load, draw and run 3D Scenes/Models in a web browser
 
-![image](https://user-images.githubusercontent.com/58040241/236886894-35edfc2d-442b-47d8-9c3e-bec9f20fd4f3.png)
+![image](https://github.com/Fransiscus-Xaverius/proyek-grafkom/assets/58040241/f51583ae-94a2-4334-ac10-0c71566e6fc4)
 
 # First Time Setup
 To run this project, these must be installed/available to use in your computer:
