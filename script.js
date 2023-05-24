@@ -1,7 +1,11 @@
 import * as THREE from "three";
+
+// import { PointerLockControls } from 'three/addons/controls/PointerLockControls.js';
+// import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { PointerLockControls } from 'three/addons/controls/PointerLockControls.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+// import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 var scene = new THREE.Scene();
 var cam = new THREE.PerspectiveCamera(75, innerWidth / innerHeight, 1, 1000);
@@ -19,7 +23,7 @@ cam.position.x = 60;
 cam.position.z = 375;
 cam.position.y = 205;
 document.body.appendChild(renderer.domElement);
-var directionalLight = new THREE.DirectionalLight(0xFFFFFF, 5.0);
+var directionalLight = new THREE.DirectionalLight(0xFFFFFF, 7.0);
 directionalLight.position.set(100, 100, 100);
 directionalLight.castShadow = true;
 directionalLight.shadow.camera.near = 1;
@@ -74,24 +78,24 @@ loader.load(
     }
 )
 
-let starship;
-loader.load(
-    'models/starwars_model/scene.gltf',
-    function (gltf) {
-        starship = gltf.scene;
-        starship.receiveShadow = true;
-        starship.castShadow = true;
-        starship.position.x = 0;
-        starship.position.y = 0;
-        starship.position.z = 0;
-        starship.scale.x = 6;
-        starship.scale.y = 6;
-        starship.scale.z = 6;
-        let axesHelper1 = new THREE.AxesHelper(50);
-        starship.add(axesHelper1);
-        scene.add(starship)
-    }
-)
+// let starship;
+// loader.load(
+//     'models/starwars_model/scene.gltf',
+//     function (gltf) {
+//         starship = gltf.scene;
+//         starship.receiveShadow = true;
+//         starship.castShadow = true;
+//         starship.position.x = 0;
+//         starship.position.y = 0;
+//         starship.position.z = 0;
+//         starship.scale.x = 6;
+//         starship.scale.y = 6;
+//         starship.scale.z = 6;
+//         let axesHelper1 = new THREE.AxesHelper(50);
+//         starship.add(axesHelper1);
+//         scene.add(starship)
+//     }
+// )
 //gedung yang 4 biji putih
 let gedung_2;
 loader.load(
@@ -139,11 +143,14 @@ loader.load(
         pesawat.receiveShadow = true;
         pesawat.castShadow = true;
         pesawat.position.x = 15;
-        pesawat.position.y = 50;
-        pesawat.position.z = 100;
-        pesawat.scale.x = 1;
-        pesawat.scale.y = 1;
-        pesawat.scale.z = 1;
+        pesawat.position.y = 200;
+        pesawat.position.z = 300;
+        pesawat.scale.x = 2;
+        pesawat.scale.y = 2;
+        pesawat.scale.z = 2;
+        // pesawat.rotation.y += 2;
+        // pesawat.rotation.z += 6;
+
         console.log(pesawat)
         scene.add(pesawat)
     }
@@ -250,7 +257,7 @@ function processKeyboard(delta) {
                 controls.moveForward(actualSpeed);
 
             }
-        } 
+        }
         //gedung bunker
         else if (cam.position.x > -300 && cam.position.x < -105) {
             if (cam.position.y < 100) {
@@ -294,7 +301,7 @@ function processKeyboard(delta) {
                 controls.moveRight(-actualSpeed);
 
             }
-        } 
+        }
         //gedung bunker
         else if (cam.position.x > -300 && cam.position.x < -105) {
             if (cam.position.y < 100) {
@@ -338,7 +345,7 @@ function processKeyboard(delta) {
                 controls.moveForward(-actualSpeed);
 
             }
-        } 
+        }
         //gedung bunker
         else if (cam.position.x > -300 && cam.position.x < -105) {
             if (cam.position.y < 100) {
@@ -381,7 +388,7 @@ function processKeyboard(delta) {
                 controls.moveRight(actualSpeed);
 
             }
-        } 
+        }
         //gedung bunker
         else if (cam.position.x > -300 && cam.position.x < -105) {
             if (cam.position.y < 100) {
@@ -422,7 +429,7 @@ function processKeyboard(delta) {
                 cam.translateY(-actualSpeed);
 
             }
-        } 
+        }
         //gedung bunker
         else if (cam.position.x > -300 && cam.position.x < -105) {
             if (cam.position.y < 100) {
@@ -455,7 +462,7 @@ function animate() {
 }
 
 let timer = 0;
-
+let timer2 = 0;
 function resetStarship(timer) {
     starship.position.x = 0;
     starship.position.z = 0;
@@ -467,15 +474,15 @@ function animateStarship(t) {
     if (t > 5 && t < 10) {
         console.log(t);
         starship.rotation.x += 100;
+        
     }
 }
 
+let rotateYPesawat = 15;
 function drawScene() {
     renderer.render(scene, cam);
     animate();
-    if (pesawat != undefined) {
 
-    }
     let delta = clock.getDelta();
     processKeyboard(delta);
     controls.lock();
@@ -485,13 +492,62 @@ function drawScene() {
         death_star.position.x = -1000;
         death_star.position.y = 1200;
         death_star.position.z = -600;
+        
         resetStarship(timer);
     }
     else {
-        starship.translateZ(7);
+        // starship.translateZ(7);
         animateStarship(timer);
         death_star.translateX(10);
+        
     }
+    if (timer2 == 0) {
+        pesawat.rotation.y = rotateYPesawat
+    }
+    if (timer2 < 500) {
+        if (timer2 < 450) {
+            pesawat.position.x++
+            pesawat.position.y += 0.1
+            pesawat.rotation.z += -0.003
+            // pesawat.rotation.y += -.00000001
+            // pesawat.rotation.z += -.1
+        }
+        timer2++
+
+    } else if (timer2 < 1000) {
+        if (timer2 == 500) {
+            pesawat.rotation.y -= 5
+        }
+        pesawat.position.z--
+        pesawat.position.y -= 0.1
+        pesawat.rotation.z += 0.003
+        timer2++
+    } else if (timer2 < 1500) {
+        if (timer2 == 1000) {
+            pesawat.rotation.y -= 5
+        }
+        pesawat.position.x--
+        pesawat.position.y += 0.1
+        pesawat.rotation.z += -0.003
+        timer2++
+    } else if (timer2 < 2000) {
+        if (timer2 == 1500) {
+            pesawat.rotation.y -= 5
+        }
+        pesawat.position.z++
+        pesawat.position.y -= 0.1
+        pesawat.rotation.z += 0.003
+        timer2++
+        if (timer2 == 1999) {
+            timer2 = 0;
+            rotateYPesawat = 15;
+            pesawat.position.x = 15;
+            pesawat.position.y = 200;
+            pesawat.position.z = 300;
+        }
+    }
+
+
     timer++;
     console.log(timer);
 }
