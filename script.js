@@ -230,10 +230,10 @@ addEventListener('keyup', (e) => {
     keyboard[e.key] = false;
 });
 
-let futuristic_building; 
+let futuristic_building;
 loader.load(
     'models/futuristic_building/scene.gltf',
-    function(gltf){
+    function (gltf) {
         futuristic_building = gltf.scene;
         futuristic_building.receiveShadow = true;
         futuristic_building.castShadow = true;
@@ -247,10 +247,10 @@ loader.load(
     }
 )
 
-let scifi_building; 
+let scifi_building;
 loader.load(
     'models/scifi_building/scene.gltf',
-    function(gltf){
+    function (gltf) {
         scifi_building = gltf.scene;
         scifi_building.receiveShadow = true;
         scifi_building.castShadow = true;
@@ -281,10 +281,11 @@ function processKeyboard(delta) {
                 controls.moveForward(actualSpeed);
 
             }
-        }//gedung tinggi
-        else if (cam.position.x > 239 && cam.position.x < 430) {
-            if (cam.position.y < 450) {
-                if (cam.position.z > -13 || cam.position.z < -155) {
+        }
+        //gedung tinggi item 1
+        else if (cam.position.x > 150 && cam.position.x < 250) {
+            if (cam.position.y < 300) {
+                if (cam.position.z > 125 || cam.position.z < 22) {
                     controls.moveForward(actualSpeed);
                 }
             } else {
@@ -296,6 +297,28 @@ function processKeyboard(delta) {
         else if (cam.position.x > -300 && cam.position.x < -105) {
             if (cam.position.y < 100) {
                 if (cam.position.z > 270 || cam.position.z < 120) {
+                    controls.moveForward(actualSpeed);
+                }
+            } else {
+                controls.moveForward(actualSpeed);
+
+            }
+        }
+        //gedung spiral gede 
+        else if (cam.position.x > 160 && cam.position.x < 420) {
+            if (cam.position.y < 650) {
+                if (cam.position.z > 130 || cam.position.z < -80) {
+                    controls.moveForward(actualSpeed);
+                }
+            } else {
+                controls.moveForward(actualSpeed);
+
+            }
+        } 
+        //gedung tinggi item 2
+        else if (cam.position.x > 90 && cam.position.x < 200) {
+            if (cam.position.y < 415) {
+                if (cam.position.z < -150) {
                     controls.moveForward(actualSpeed);
                 }
             } else {
@@ -326,9 +349,21 @@ function processKeyboard(delta) {
 
             }
         }
-        else if (cam.position.x > 239 && cam.position.x < 430) {
-            if (cam.position.y < 450) {
-                if (cam.position.z > -13 || cam.position.z < -155) {
+        //gedung tinggi item 1
+        else if (cam.position.x > 150 && cam.position.x < 250) {
+            if (cam.position.y < 300) {
+                if (cam.position.z > 125 || cam.position.z < 22) {
+                    controls.moveRight(-actualSpeed);
+                }
+            } else {
+                controls.moveRight(-actualSpeed);
+
+            }
+        }
+        //gedung spiral gede 
+        else if (cam.position.x > 160 && cam.position.x < 420) {
+            if (cam.position.y < 650) {
+                if (cam.position.z > 130 || cam.position.z < -80) {
                     controls.moveRight(-actualSpeed);
                 }
             } else {
@@ -340,6 +375,17 @@ function processKeyboard(delta) {
         else if (cam.position.x > -300 && cam.position.x < -105) {
             if (cam.position.y < 100) {
                 if (cam.position.z > 270 || cam.position.z < 120) {
+                    controls.moveRight(-actualSpeed);
+                }
+            } else {
+                controls.moveRight(-actualSpeed);
+
+            }
+        }
+        //gedung tinggi item 2
+        else if (cam.position.x > 90 && cam.position.x < 200) {
+            if (cam.position.y < 415) {
+                if (cam.position.z < -150) {
                     controls.moveRight(-actualSpeed);
                 }
             } else {
@@ -370,9 +416,10 @@ function processKeyboard(delta) {
 
             }
         }
-        else if (cam.position.x > 239 && cam.position.x < 430) {
-            if (cam.position.y < 450) {
-                if (cam.position.z > -13 || cam.position.z < -155) {
+        //gedung tinggi item 1
+        else if (cam.position.x > 150 && cam.position.x < 250) {
+            if (cam.position.y < 300) {
+                if (cam.position.z > 125 || cam.position.z < 22) {
                     controls.moveForward(-actualSpeed);
                 }
             } else {
@@ -384,6 +431,28 @@ function processKeyboard(delta) {
         else if (cam.position.x > -300 && cam.position.x < -105) {
             if (cam.position.y < 100) {
                 if (cam.position.z > 270 || cam.position.z < 120) {
+                    controls.moveForward(-actualSpeed);
+                }
+            } else {
+                controls.moveForward(-actualSpeed);
+
+            }
+        } 
+        //gedung spiral gede 
+        else if (cam.position.x > 160 && cam.position.x < 420) {
+            if (cam.position.y < 650) {
+                if (cam.position.z > 130 || cam.position.z < -80) {
+                    controls.moveForward(-actualSpeed);
+                }
+            } else {
+                controls.moveForward(-actualSpeed);
+
+            }
+        } 
+        //gedung tinggi item 2
+        else if (cam.position.x > 90 && cam.position.x < 200) {
+            if (cam.position.y < 415) {
+                if (cam.position.z < -150) {
                     controls.moveForward(-actualSpeed);
                 }
             } else {
@@ -413,9 +482,10 @@ function processKeyboard(delta) {
 
             }
         }
-        else if (cam.position.x > 239 && cam.position.x < 430) {
-            if (cam.position.y < 450) {
-                if (cam.position.z > -13 || cam.position.z < -155) {
+        //gedung tinggi item 1
+        else if (cam.position.x > 150 && cam.position.x < 250) {
+            if (cam.position.y < 300) {
+                if (cam.position.z > 125 || cam.position.z < 22) {
                     controls.moveRight(actualSpeed);
                 }
             } else {
@@ -427,6 +497,28 @@ function processKeyboard(delta) {
         else if (cam.position.x > -300 && cam.position.x < -105) {
             if (cam.position.y < 100) {
                 if (cam.position.z > 270 || cam.position.z < 120) {
+                    controls.moveRight(actualSpeed);
+                }
+            } else {
+                controls.moveRight(actualSpeed);
+
+            }
+        } 
+        //gedung spiral gede 
+        else if (cam.position.x > 160 && cam.position.x < 420) {
+            if (cam.position.y < 650) {
+                if (cam.position.z > 130 || cam.position.z < -80) {
+                    controls.moveRight(actualSpeed);
+                }
+            } else {
+                controls.moveRight(actualSpeed);
+
+            }
+        } 
+        //gedung tinggi item 2
+        else if (cam.position.x > 90 && cam.position.x < 200) {
+            if (cam.position.y < 415) {
+                if (cam.position.z < -150) {
                     controls.moveRight(actualSpeed);
                 }
             } else {
@@ -454,9 +546,10 @@ function processKeyboard(delta) {
 
             }
         }
-        else if (cam.position.x > 239 && cam.position.x < 430) {
-            if (cam.position.y < 450) {
-                if (cam.position.z > -13 || cam.position.z < -155) {
+        //gedung tinggi item 1
+        else if (cam.position.x > 150 && cam.position.x < 250) {
+            if (cam.position.y < 300) {
+                if (cam.position.z > 125 || cam.position.z < 22) {
                     cam.translateY(-actualSpeed);
                 }
             } else {
@@ -468,6 +561,28 @@ function processKeyboard(delta) {
         else if (cam.position.x > -300 && cam.position.x < -105) {
             if (cam.position.y < 100) {
                 if (cam.position.z > 270 || cam.position.z < 120) {
+                    cam.translateY(-actualSpeed);
+                }
+            } else {
+                cam.translateY(-actualSpeed);
+
+            }
+        } 
+        //gedung spiral gede 
+        else if (cam.position.x > 160 && cam.position.x < 420) {
+            if (cam.position.y < 650) {
+                if (cam.position.z > 130 || cam.position.z < -80) {
+                    cam.translateY(-actualSpeed);
+                }
+            } else {
+                cam.translateY(-actualSpeed);
+
+            }
+        } 
+        //gedung tinggi item 2
+        else if (cam.position.x > 90 && cam.position.x < 200) {
+            if (cam.position.y < 415) {
+                if (cam.position.z < -150) {
                     cam.translateY(-actualSpeed);
                 }
             } else {
@@ -508,7 +623,7 @@ function animateStarship(t) {
     if (t > 5 && t < 10) {
         console.log(t);
         starship.rotation.x += 100;
-        
+
     }
 }
 
@@ -526,21 +641,21 @@ function drawScene() {
         death_star.position.x = -1000;
         death_star.position.y = 1200;
         death_star.position.z = -600;
-        
+
         resetStarship(timer);
     }
     else {
         // starship.translateZ(7);
         animateStarship(timer);
         death_star.translateX(1);
-        
+
     }
     if (timer2 == 0) {
         pesawat.rotation.y = rotateYPesawat
     }
     if (timer2 < 500) {
         if (timer2 < 450) {
-            pesawat.position.x++
+            pesawat.position.x += 1.05
             pesawat.position.y += 0.1
             pesawat.rotation.z += -0.003
             // pesawat.rotation.y += -.00000001
