@@ -230,22 +230,22 @@ addEventListener('keyup', (e) => {
     keyboard[e.key] = false;
 });
 
-let futuristic_building;
-loader.load(
-    'models/futuristic_building/scene.gltf',
-    function (gltf) {
-        futuristic_building = gltf.scene;
-        futuristic_building.receiveShadow = true;
-        futuristic_building.castShadow = true;
-        futuristic_building.position.x = 160;
-        futuristic_building.position.y = 0;
-        futuristic_building.position.z = -90;
-        futuristic_building.scale.x = 100;
-        futuristic_building.scale.y = 125;
-        futuristic_building.scale.z = 75;
-        scene.add(futuristic_building);
-    }
-)
+// let futuristic_building;
+// loader.load(
+//     'models/futuristic_building/scene.gltf',
+//     function (gltf) {
+//         futuristic_building = gltf.scene;
+//         futuristic_building.receiveShadow = true;
+//         futuristic_building.castShadow = true;
+//         futuristic_building.position.x = 160;
+//         futuristic_building.position.y = 0;
+//         futuristic_building.position.z = -180;
+//         futuristic_building.scale.x = 100;
+//         futuristic_building.scale.y = 125;
+//         futuristic_building.scale.z = 75;
+//         scene.add(futuristic_building);
+//     }
+// )
 
 let scifi_building;
 loader.load(
@@ -314,18 +314,17 @@ function processKeyboard(delta) {
                 controls.moveForward(actualSpeed);
 
             }
-        } 
-        //gedung tinggi item 2
-        else if (cam.position.x > 90 && cam.position.x < 200) {
-            if (cam.position.y < 415) {
-                if (cam.position.z < -150) {
-                    controls.moveForward(actualSpeed);
-                }
-            } else {
-                controls.moveForward(actualSpeed);
-
-            }
         }
+        //gedung tinggi item 2
+        // else if (cam.position.x > 90 && cam.position.x < 240) {
+        //     if (cam.position.y < 415) {
+        //         if (cam.position.z > -100 || cam.position.z < -250) {
+        //             controls.moveForward(actualSpeed);
+        //         }
+        //     } else {
+        //         controls.moveForward(actualSpeed);
+        //     }
+        // }
         else {
             controls.moveForward(actualSpeed);
         }
@@ -383,16 +382,15 @@ function processKeyboard(delta) {
             }
         }
         //gedung tinggi item 2
-        else if (cam.position.x > 90 && cam.position.x < 200) {
-            if (cam.position.y < 415) {
-                if (cam.position.z < -150) {
-                    controls.moveRight(-actualSpeed);
-                }
-            } else {
-                controls.moveRight(-actualSpeed);
-
-            }
-        }
+        // else if (cam.position.x > 90 && cam.position.x < 240) {
+        //     if (cam.position.y < 415) {
+        //         if (cam.position.z > -100 || cam.position.z < -250) {
+        //             controls.moveRight(-actualSpeed);
+        //         }
+        //     } else {
+        //         controls.moveRight(-actualSpeed);
+        //     }
+        // }
         else {
             controls.moveRight(-actualSpeed);
         }
@@ -437,7 +435,7 @@ function processKeyboard(delta) {
                 controls.moveForward(-actualSpeed);
 
             }
-        } 
+        }
         //gedung spiral gede 
         else if (cam.position.x > 160 && cam.position.x < 420) {
             if (cam.position.y < 650) {
@@ -448,18 +446,17 @@ function processKeyboard(delta) {
                 controls.moveForward(-actualSpeed);
 
             }
-        } 
-        //gedung tinggi item 2
-        else if (cam.position.x > 90 && cam.position.x < 200) {
-            if (cam.position.y < 415) {
-                if (cam.position.z < -150) {
-                    controls.moveForward(-actualSpeed);
-                }
-            } else {
-                controls.moveForward(-actualSpeed);
-
-            }
         }
+        //gedung tinggi item 2
+        // else if (cam.position.x > 90 && cam.position.x < 240) {
+        //     if (cam.position.y < 415) {
+        //         if (cam.position.z > -100 || cam.position.z < -250) {
+        //             controls.moveForward(-actualSpeed);
+        //         }
+        //     } else {
+        //         controls.moveForward(-actualSpeed);
+        //     }
+        // }
         else {
             controls.moveForward(-actualSpeed);
         }
@@ -503,7 +500,7 @@ function processKeyboard(delta) {
                 controls.moveRight(actualSpeed);
 
             }
-        } 
+        }
         //gedung spiral gede 
         else if (cam.position.x > 160 && cam.position.x < 420) {
             if (cam.position.y < 650) {
@@ -514,18 +511,17 @@ function processKeyboard(delta) {
                 controls.moveRight(actualSpeed);
 
             }
-        } 
-        //gedung tinggi item 2
-        else if (cam.position.x > 90 && cam.position.x < 200) {
-            if (cam.position.y < 415) {
-                if (cam.position.z < -150) {
-                    controls.moveRight(actualSpeed);
-                }
-            } else {
-                controls.moveRight(actualSpeed);
-
-            }
         }
+        // //gedung tinggi item 2
+        // else if (cam.position.x > 90 && cam.position.x < 240) {
+        //     if (cam.position.y < 415) {
+        //         if (cam.position.z > -100 || cam.position.z < -250) {
+        //             controls.moveRight(actualSpeed);
+        //         }
+        //     } else {
+        //         controls.moveRight(actualSpeed);
+        //     }
+        // }
         else {
             controls.moveRight(actualSpeed);
         }
@@ -567,7 +563,7 @@ function processKeyboard(delta) {
                 cam.translateY(-actualSpeed);
 
             }
-        } 
+        }
         //gedung spiral gede 
         else if (cam.position.x > 160 && cam.position.x < 420) {
             if (cam.position.y < 650) {
@@ -578,18 +574,17 @@ function processKeyboard(delta) {
                 cam.translateY(-actualSpeed);
 
             }
-        } 
-        //gedung tinggi item 2
-        else if (cam.position.x > 90 && cam.position.x < 200) {
-            if (cam.position.y < 415) {
-                if (cam.position.z < -150) {
-                    cam.translateY(-actualSpeed);
-                }
-            } else {
-                cam.translateY(-actualSpeed);
-
-            }
         }
+        //gedung tinggi item 2
+        // else if (cam.position.x > 90 && cam.position.x < 240) {
+        //     if (cam.position.y < 415) {
+        //         if (cam.position.z > -100 || cam.position.z < -250) {
+        //             // cam.translateY(-actualSpeed);
+        //         }
+        //     } else {
+        //         cam.translateY(-actualSpeed);
+        //     }
+        // }
         else {
             cam.translateY(-actualSpeed);
         }
@@ -655,8 +650,8 @@ function drawScene() {
     }
     if (timer2 < 500) {
         if (timer2 < 450) {
-            pesawat.position.x += 1.05
-            pesawat.position.y += 0.1
+            pesawat.position.x += 1.5
+            pesawat.position.y += 0.15
             pesawat.rotation.z += -0.003
             // pesawat.rotation.y += -.00000001
             // pesawat.rotation.z += -.1
@@ -667,24 +662,24 @@ function drawScene() {
         if (timer2 == 500) {
             pesawat.rotation.y -= 5
         }
-        pesawat.position.z--
-        pesawat.position.y -= 0.1
+        pesawat.position.z -= 1.5
+        pesawat.position.y -= 0.15
         pesawat.rotation.z += 0.003
         timer2++
     } else if (timer2 < 1500) {
         if (timer2 == 1000) {
             pesawat.rotation.y -= 5
         }
-        pesawat.position.x--
-        pesawat.position.y += 0.1
+        pesawat.position.x -= 1.5
+        pesawat.position.y += 0.15
         pesawat.rotation.z += -0.003
         timer2++
     } else if (timer2 < 2000) {
         if (timer2 == 1500) {
             pesawat.rotation.y -= 5
         }
-        pesawat.position.z++
-        pesawat.position.y -= 0.1
+        pesawat.position.z += 1.5
+        pesawat.position.y -= 0.15
         pesawat.rotation.z += 0.003
         timer2++
         if (timer2 == 1999) {
