@@ -215,6 +215,28 @@ let clock = new THREE.Clock();
 const boxGeometry = new THREE.BoxGeometry();
 const boxMaterial = new THREE.MeshBasicMaterial({ color: 0xFF0000 });
 
+//
+const geometrySphere = new THREE.SphereGeometry(5, 32, 5);
+var materialSphere = new THREE.MeshStandardMaterial({
+  metalness: 1,
+  roughness: 0.5,
+  color:0xffffff,
+  opacity: 0,
+  transparent: true,
+});
+const sphere = new THREE.Mesh(geometrySphere, materialSphere);
+sphere.position.set(190, 305, 90);
+scene.add(sphere)
+
+const spotlight = new THREE.SpotLight(0xffff00, 20, 0, 0.2,0.5,1)
+spotlight.position.set(0,0,0)
+spotlight.target.position.set(1,-0.5,0)
+
+// const spotlightHelper = new THREE.SpotLightHelper(spotlight,0xff0000)
+
+// scene.add(spotlightHelper)
+sphere.add(spotlight)
+sphere.add(spotlight.target)
 // const box = new THREE.Mesh(boxGeometry, boxMaterial);
 
 // const axesHelper = new THREE.AxesHelper(50);
@@ -625,6 +647,7 @@ function animateStarship(t) {
 let rotateYPesawat = 15;
 function drawScene() {
     renderer.render(scene, cam);
+    
     animate();
 
     let delta = clock.getDelta();
@@ -645,6 +668,7 @@ function drawScene() {
         death_star.translateX(1);
 
     }
+    sphere.rotateY(0.1)
     if (timer2 == 0) {
         pesawat.rotation.y = rotateYPesawat
     }
